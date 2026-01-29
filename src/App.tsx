@@ -1,10 +1,10 @@
 
 import React, { useState, useCallback, useMemo } from 'react';
 import { ThemeProvider, createTheme, CssBaseline, Box } from '@mui/material';
-import { SimState } from './types.ts';
-import Sidebar from './components/Sidebar.tsx';
-import SimulationCanvas from './components/SimulationCanvas.tsx';
-import { INITIAL_EARTH_MASS, INITIAL_MOON_MASS, EARTH_COLOR, MOON_COLOR } from './constants.ts';
+import { SimState } from './types';
+import Sidebar from './components/Sidebar';
+import SimulationCanvas from './components/SimulationCanvas';
+import { INITIAL_EARTH_MASS, INITIAL_MOON_MASS, EARTH_COLOR, MOON_COLOR } from './constants';
 
 const App: React.FC = () => {
   const [state, setState] = useState<SimState>({
@@ -45,7 +45,7 @@ const App: React.FC = () => {
   const theme = useMemo(() => createTheme({
     palette: {
       mode: 'dark',
-      primary: { main: '#3b82f6' }, 
+      primary: { main: '#3b82f6' },
       secondary: { main: '#ef4444' },
       background: {
         default: '#000000',
@@ -84,20 +84,22 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box sx={{ 
-        display: 'flex', 
-        height: '100vh', 
-        width: '100vw', 
-        overflow: 'hidden', 
-        bgcolor: 'background.default' 
-      }}>
-        <Sidebar 
-          state={state} 
-          onUpdate={handleUpdate} 
+      <Box
+        sx={{
+          display: 'flex',
+          height: '100vh',
+          width: '100vw',
+          overflow: 'hidden',
+          bgcolor: 'background.default',
+        }}
+      >
+        <Sidebar
+          state={state}
+          onUpdate={handleUpdate}
         />
-        <SimulationCanvas 
-          state={state} 
-          onUpdate={handleUpdate} 
+        <SimulationCanvas
+          state={state}
+          onUpdate={handleUpdate}
         />
       </Box>
     </ThemeProvider>

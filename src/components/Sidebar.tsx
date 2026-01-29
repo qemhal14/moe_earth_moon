@@ -14,9 +14,9 @@ import {
   Alert,
   Fade
 } from '@mui/material';
-import { SimState } from '../types.ts';
-import { G } from '../constants.ts';
-import { calculateGravitationalForce } from '../utils.ts';
+import { SimState } from '../types';
+import { G } from '../constants';
+import { calculateGravitationalForce } from '../utils';
 
 interface Props {
   state: SimState;

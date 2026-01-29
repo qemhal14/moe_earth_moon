@@ -4,9 +4,9 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Stars, PerspectiveCamera, Text, Billboard, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 import { Box, Paper, Typography, Stack, Divider, Fade } from '@mui/material';
-import { SimState } from '../types.ts';
-import { COLORS, EARTH_COLOR, MOON_COLOR } from '../constants.ts';
-import { calculateGravitationalForce, formatScientific } from '../utils.ts';
+import { SimState } from '../types';
+import { COLORS, EARTH_COLOR, MOON_COLOR } from '../constants';
+import { calculateGravitationalForce, formatScientific } from '../utils';
 
 interface Props {
   state: SimState;
@@ -200,7 +200,7 @@ const SimulationCanvas: React.FC<Props> = ({ state, onUpdate }) => {
   }, [state.earth.mass, state.moon.mass]);
 
   return (
-    <Box sx={{ flex: 1, position: 'relative', bgcolor: '#010208' }}>
+    <Box sx={{ flex: 1, position: 'relative', bgcolor: '#010208' } as any}>
       <Canvas shadows camera={{ position: [0, 70, 110], fov: 45 }} gl={{ antialias: true }}>
         <PerspectiveCamera makeDefault position={[0, 70, 110]} />
         <Suspense fallback={null}>
@@ -237,7 +237,7 @@ const SimulationCanvas: React.FC<Props> = ({ state, onUpdate }) => {
         backdropFilter: 'blur(12px)',
         border: '1px solid rgba(255,255,255,0.1)',
         pointerEvents: 'none'
-      }}>
+      } as any}>
         <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1.5 }}>
           <Box sx={{ width: 4, height: 4, borderRadius: '50%', bgcolor: 'primary.main', animation: 'pulse 2s infinite' }} />
           <Typography variant="overline" sx={{ fontSize: '0.7rem', fontWeight: 900, color: 'primary.main', letterSpacing: 1.2 }}>
@@ -299,7 +299,7 @@ const SimulationCanvas: React.FC<Props> = ({ state, onUpdate }) => {
         border: '1px solid rgba(255,255,255,0.1)',
         pointerEvents: 'none',
         whiteSpace: 'nowrap'
-      }}>
+      } as any}>
         <Stack direction="row" spacing={4} alignItems="center">
           <Stack direction="row" spacing={1.5} alignItems="center">
             <i className="fas fa-mouse-pointer" style={{ fontSize: 12, color: '#3b82f6' }}></i>
