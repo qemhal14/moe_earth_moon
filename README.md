@@ -40,7 +40,7 @@ To create an optimized production build:
 npm run build
 ```
 
-The output will be generated in the `dist/` directory, ready for deployment.
+The output will be generated in the `build/` directory, ready for deployment.
 
 ## 🔭 Features
 
