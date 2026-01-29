@@ -200,7 +200,7 @@ const SimulationCanvas: React.FC<Props> = ({ state, onUpdate }) => {
   }, [state.earth.mass, state.moon.mass]);
 
   return (
-    <Box sx={{ flex: 1, position: 'relative', bgcolor: '#010208' } as any}>
+    <Box sx={{ flex: 1, position: 'relative', bgcolor: '#010208' }}>
       <Canvas shadows camera={{ position: [0, 70, 110], fov: 45 }} gl={{ antialias: true }}>
         <PerspectiveCamera makeDefault position={[0, 70, 110]} />
         <Suspense fallback={null}>
