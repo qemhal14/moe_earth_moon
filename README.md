@@ -1,5 +1,7 @@
 # NewtonLab 3D: Earth-Moon Gravity Simulation
 
+![screencapture-localhost-8000-2026-01-29-11_31_36](https://github.com/user-attachments/assets/35c6dc61-b0ca-4cf9-8f8d-ebd68928967f)
+
 A high-fidelity 3D simulation of gravitational forces between the Earth and the Moon, built with React, Three.js, and Material-UI.
 
 ## 🚀 Getting Started
