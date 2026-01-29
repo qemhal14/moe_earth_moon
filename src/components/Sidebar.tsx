@@ -167,7 +167,7 @@ const Sidebar: React.FC<Props> = ({ state, onUpdate }) => {
           </IconButton>
           <DialogContent sx={{ p: 0, display: 'flex' }}>
             <img
-              src="/images/textbook_example_earth_moon.jpg"
+              src="/Images/textbook_example_earth_moon.jpg"
               alt="Textbook Explanation"
               style={{ width: '50%', height: 'auto', display: 'block', margin: 'auto' }}
             />
