@@ -18,7 +18,7 @@ A high-fidelity 3D simulation of gravitational forces between the Earth and the 
 
 2. **Install dependencies:**
    ```bash
-   npm install
+   npm install --legacy-peer-deps
    ```
 
 ## 🛠️ Development
