@@ -1,0 +1,5 @@
+{
+  "name": "Earth-Moon Gravity Simulation",
+  "description": "An interactive physics simulation demonstrating Newton's Third Law and gravitational interaction between the Earth and the Moon. Students can adjust mass and distance to see real-time changes in force vectors.",
+  "requestFramePermissions": []
+}
