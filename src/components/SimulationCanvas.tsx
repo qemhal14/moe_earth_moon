@@ -200,7 +200,7 @@ const SimulationCanvas: React.FC<Props> = ({ state, onUpdate }) => {
   }, [state.earth.mass, state.moon.mass]);
 
   return (
-    <Box sx={{ flex: 1, position: 'relative', bgcolor: '#010208' }}>
+    <Box sx={{ flex: 1, position: 'relative', bgcolor: '#010208' } as any}>
       <Canvas shadows camera={{ position: [0, 70, 110], fov: 45 }} gl={{ antialias: true }}>
         <PerspectiveCamera makeDefault position={[0, 70, 110]} />
         <Suspense fallback={null}>
@@ -214,14 +214,14 @@ const SimulationCanvas: React.FC<Props> = ({ state, onUpdate }) => {
         left: '50%',
         transform: 'translate(-50%, -50%)',
         pointerEvents: 'none'
-      }}>
+      } as any}>
         <Fade in={state.feedbackVisible} timeout={500}>
           <Typography variant="h3" sx={{
             fontWeight: 900,
             color: state.feedbackText.includes('Increased') ? '#22c55e' : '#ef4444',
             textShadow: '0 0 20px rgba(0,0,0,1)',
             letterSpacing: 2
-          }}>
+          } as any}>
             {state.feedbackText}
           </Typography>
         </Fade>

@@ -12,7 +12,10 @@ import {
   FormControlLabel,
   Tooltip,
   Alert,
-  Fade
+  Fade,
+  Dialog,
+  DialogContent,
+  IconButton
 } from '@mui/material';
 import { SimState } from '../types';
 import { G } from '../constants';
@@ -55,7 +58,7 @@ const Sidebar: React.FC<Props> = ({ state, onUpdate }) => {
       borderRight: '1px solid rgba(255,255,255,0.05)',
       overflowY: 'auto',
       zIndex: 10
-    }}>
+    } as any}>
       {/* Header */}
       <Box sx={{ p: 4, pb: 2, background: 'linear-gradient(to bottom, #1e293b, #0f172a)' }}>
         <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 1 }}>
@@ -75,8 +78,11 @@ const Sidebar: React.FC<Props> = ({ state, onUpdate }) => {
             NewtonLab 3D
           </Typography>
         </Stack>
-        <Typography variant="overline" sx={{ color: 'text.secondary', fontWeight: 900, letterSpacing: 2 }}>
-          Newtonian Mechanics
+        {/* <Typography variant="overline" sx={{ color: 'text.secondary', fontWeight: 900, letterSpacing: 2 }}>
+          Newtonian Mechanics */}
+        {/* </Typography> */}
+        <Typography variant="body2" sx={{ color: 'primary.light', fontWeight: 700, mt: 1, lineHeight: 1.2 }}>
+          Example 2: Non-contact force between the Earth and the Moon
         </Typography>
       </Box>
 
@@ -132,8 +138,42 @@ const Sidebar: React.FC<Props> = ({ state, onUpdate }) => {
               </Button>
             </Stack>
           </Paper>
+          <Button
+            fullWidth
+            variant="contained"
+            color="secondary"
+            onClick={() => onUpdate({ showTextbook: true })}
+            startIcon={<i className="fas fa-file-alt"></i>}
+            sx={{ mt: 1, py: 1, fontWeight: 800, boxShadow: '0 4px 12px rgba(239, 68, 68, 0.3)' }}
+          >
+            Check Textbook Explanation
+          </Button>
         </Box>
       </Fade>
+
+      {/* Textbook Image Dialog */}
+      <Dialog
+        open={state.showTextbook}
+        onClose={() => onUpdate({ showTextbook: false })}
+        maxWidth="md"
+        fullWidth
+      >
+        <Box sx={{ position: 'relative', bgcolor: '#0f172a' }}>
+          <IconButton
+            onClick={() => onUpdate({ showTextbook: false })}
+            sx={{ position: 'absolute', right: 8, top: 8, color: 'white', zIndex: 1, bgcolor: 'rgba(0,0,0,0.5)', '&:hover': { bgcolor: 'rgba(0,0,0,0.7)' } }}
+          >
+            <i className="fas fa-times"></i>
+          </IconButton>
+          <DialogContent sx={{ p: 0, display: 'flex' }}>
+            <img
+              src="/images/textbook_example_earth_moon.jpg"
+              alt="Textbook Explanation"
+              style={{ width: '50%', height: 'auto', display: 'block', margin: 'auto' }}
+            />
+          </DialogContent>
+        </Box>
+      </Dialog>
 
       <Box sx={{ px: 2, mb: 2 }}>
         <Alert severity="warning" variant="outlined" sx={{
@@ -294,7 +334,7 @@ const Sidebar: React.FC<Props> = ({ state, onUpdate }) => {
           Visualizing Physics for Students
         </Typography>
       </Box>
-    </Box>
+    </Box >
   );
 };
 

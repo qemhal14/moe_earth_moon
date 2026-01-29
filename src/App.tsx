@@ -33,6 +33,7 @@ const App: React.FC = () => {
     isScientificMode: false,
     isLearningMode: false,
     learningStep: 0,
+    showTextbook: false,
     lastForce: 0,
     feedbackText: '',
     feedbackVisible: false,
@@ -91,7 +92,7 @@ const App: React.FC = () => {
           width: '100vw',
           overflow: 'hidden',
           bgcolor: 'background.default',
-        }}
+        } as any}
       >
         <Sidebar
           state={state}
